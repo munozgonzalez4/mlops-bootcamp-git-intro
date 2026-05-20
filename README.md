@@ -1,112 +1,243 @@
 # mlops-bootcamp-git
 
-In command prompt:
+A quick Git reference for the bootcamp exercises, with common commands and workflow notes.
 
-To know version of git
-git --version 
+## 1. Verify Git Installation
 
-1) Create a file locally and commit/push to repository
+In Command Prompt:
 
-I created manually the README.md file in the local folder
+- Check the installed Git version:
+  ```bash
+  git --version
+  ```
 
-Initialize git: create a new repository with a .git file hidden (won't be committed)
-git init
+## 2. Initialize a Local Repository
 
-Check files in the new path
-dir
+After creating a local project folder and adding files (for example, `README.md`):
 
-Global config - first time git setup
-Search in Google "Git global config"
+- Initialize Git in the folder:
+  ```bash
+  git init
+  ```
 
+- List the contents of the folder:
+  ```bash
+  dir
+  ```
+
+## 3. First-Time Configuration
+
+Set your global Git identity once on a new machine:
+
+```bash
 git config --global user.name "Santiago Muñoz"
 git config --global user.email "munozgonzalezsantiago@gmail.com"
+```
 
-Understand status of changes
-git status
+> If you need help, search for "Git global config".
 
-Make git to track a file
-git add README.md
+## 4. Basic Workflow: Add, Commit, Push
 
-Check that file is now being tracked. Will be added to "Changes to be committed"
-git status
+- Check current repository state:
+  ```bash
+  git status
+  ```
 
-Commit -> staging environment before pushing
-git commit -m "First commit"
+- Stage a file to commit:
+  ```bash
+  git add README.md
+  ```
 
-Check that commit has been in place, so "nothing to commit"
-git status
+- Verify the staged file:
+  ```bash
+  git status
+  ```
 
-Know the current branch
-git branch
+- Create the first commit:
+  ```bash
+  git commit -m "First commit"
+  ```
 
-Rename a branch 
-git branch -m new_name
+- Confirm that the commit succeeded:
+  ```bash
+  git status
+  ```
 
-Check
-git branch
+## 5. Branching Basics
 
-Connect local repository (local .git file) to remote repository
-git remote add origin <link.git>
+- Show the current branch:
+  ```bash
+  git branch
+  ```
 
-Understand where is the origin
-git remote -v
+- Rename the current branch:
+  ```bash
+  git branch -m new_name
+  ```
 
-Push to remote repo
-git push origin main
+- Confirm the branch name change:
+  ```bash
+  git branch
+  ```
 
-2) Making changes
+## 6. Connecting to a Remote Repository
 
-git status shows modified
+- Add a remote named `origin`:
+  ```bash
+  git remote add origin <link.git>
+  ```
 
-We can add the file to the commit via git add
+- Confirm the remote URL:
+  ```bash
+  git remote -v
+  ```
 
-Restore changes
-git restore README.md
+- Push the local branch to the remote:
+  ```bash
+  git push origin main
+  ```
 
-If we want to add all the changes to the commit
-git add .
+## 7. Making Changes and Revising Files
 
-Unstage changes -> basically removing from the commit
-git restore --staged <file>
+- See modified files:
+  ```bash
+  git status
+  ```
 
-Undo commits:
-git reset
+- Stage a file after editing:
+  ```bash
+  git add README.md
+  ```
 
-Understand what has changed but not being staged
-git diff
+- Stage all changed files:
+  ```bash
+  git add .
+  ```
 
-diff of what is staged but not yet committed
-git diff -staged
+- Unstage a file:
+  ```bash
+  git restore --staged <file>
+  ```
 
+- Discard local changes in a file:
+  ```bash
+  git restore README.md
+  ```
 
-Commit and push...
+## 8. Undoing Commits
 
-3) Clone a repository
+- Reset the current branch to the previous state:
+  ```bash
+  git reset
+  ```
 
-cd folder_we_want_to_clone
+## 9. Viewing Differences
 
-git clone <link>
+- Compare working changes that are not staged:
+  ```bash
+  git diff
+  ```
 
-4) Branching
+- Compare staged changes that are ready to be committed:
+  ```bash
+  git diff --staged
+  ```
 
-Understand which is the current branch
-git branch
+## 10. Cloning a Repository
 
-Create new branch
-git branch <branch-name>
+- Change into the target parent folder:
+  ```bash
+  cd folder_we_want_to_clone
+  ```
 
-Move to that branch
-git checkout <branch-name>
+- Clone the remote repository:
+  ```bash
+  git clone <link>
+  ```
 
-Merge to main
-git checkout main
-git merge <branch-name>
+## 11. Branch Workflow
 
-Push merge to remote repo
-git push origin main
+- Create a new branch:
+  ```bash
+  git branch <branch-name>
+  ```
 
-See all the commits
-git log
+- Switch to that branch:
+  ```bash
+  git checkout <branch-name>
+  ```
 
-The last n
-git log -p -<n>
+- Merge the branch into `main`:
+  ```bash
+  git checkout main
+  git merge <branch-name>
+  ```
+
+- Push the updated `main` branch to remote:
+  ```bash
+  git push origin main
+  ```
+
+## 12. Viewing Commit History
+
+- Show all commits:
+  ```bash
+  git log
+  ```
+
+- Show the last `n` commits with patch details:
+  ```bash
+  git log -p -<n>
+  ```
+
+## 13. Git Cheat Sheet
+
+- Show the current branch:
+  ```bash
+  git branch
+  ```
+
+- Create and switch to a new branch:
+  ```bash
+  git checkout -b <branch-name>
+  ```
+
+- Stage all changed files:
+  ```bash
+  git add .
+  ```
+
+- Remove a file from staging:
+  ```bash
+  git restore --staged <file>
+  ```
+
+- Discard local edits in a file:
+  ```bash
+  git restore <file>
+  ```
+
+- Revert the last commit but keep changes locally:
+  ```bash
+  git reset --soft HEAD~1
+  ```
+
+- Show file status quickly:
+  ```bash
+  git status
+  ```
+
+- Fetch remote changes without merging:
+  ```bash
+  git fetch
+  ```
+
+- Pull remote changes into the current branch:
+  ```bash
+  git pull
+  ```
+
+- Push the current branch to the remote repository:
+  ```bash
+  git push origin <branch-name>
+  ```

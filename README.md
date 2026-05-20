@@ -98,3 +98,7 @@ git branch <branch-name>
 Move to that branch
 git checkout <branch-name>
 
+Merge to main
+git checkout main
+git merge <branch-name>
+

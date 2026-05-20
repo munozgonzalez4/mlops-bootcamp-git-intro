@@ -102,3 +102,8 @@ Merge to main
 git checkout main
 git merge <branch-name>
 
+See all the commits
+git log
+
+The last n
+git log -p -<n>

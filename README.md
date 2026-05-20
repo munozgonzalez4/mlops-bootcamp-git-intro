@@ -5,7 +5,7 @@ In command prompt:
 To know version of git
 git --version 
 
-Create a file locally and commit to repository
+1) Create a file locally and commit/push to repository
 
 I created manually the README.md file in the local folder
 
@@ -53,3 +53,17 @@ git remote -v
 
 Push to remote repo
 git push origin main
+
+2) Making changes
+
+git status shows modified
+
+We can add the file to the commit via git add
+
+Restore changes
+git restore README.md
+
+If we want to add all the changes to the commit
+git add .
+
+Commit and push...

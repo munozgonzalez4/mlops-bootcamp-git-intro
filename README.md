@@ -66,4 +66,34 @@ git restore README.md
 If we want to add all the changes to the commit
 git add .
 
+Unstage changes -> basically removing from the commit
+git restore --staged <file>
+
+Undo commits:
+git reset
+
+Understand what has changed but not being staged
+git diff
+
+diff of what is staged but not yet committed
+git diff -staged
+
+
 Commit and push...
+
+3) Clone a repository
+
+cd folder_we_want_to_clone
+
+git clone <link>
+
+4) Branching
+
+Understand which is the current branch
+git branch
+
+Create new branch
+git branch <branch-name>
+
+Move to that branch
+git checkout <branch-name>

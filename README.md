@@ -102,6 +102,9 @@ Merge to main
 git checkout main
 git merge <branch-name>
 
+Push merge to remote repo
+git push origin main
+
 See all the commits
 git log
 
